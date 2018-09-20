@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 class Header extends Component {
+  static propTypes = {
+    menu: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool,
+    submit: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['news','photos']),
+    user: PropTypes.shape({
+      name: PropTypes.string,
+      age: PropTypes.number
+    }),
+    users: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        age: PropTypes.number
+      }),
+    )
+  };
   render() {
     console.log('munu', this.props);
     return (

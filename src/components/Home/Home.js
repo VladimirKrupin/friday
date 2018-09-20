@@ -17,11 +17,13 @@ const menu = [
   }
 ];
 
+const title = '123';
+
 class Home extends Component {
   render() {
     return (
       <div>
-        <Header menu={menu}/>
+        <Header menu={menu} title={title}/>
       </div>
     );
   }
