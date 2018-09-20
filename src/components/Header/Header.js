@@ -21,7 +21,6 @@ class Header extends Component {
     )
   };
   render() {
-    console.log('munu', this.props);
     return (
       <div className="Header">
         <div className="Header-container wrapper">
