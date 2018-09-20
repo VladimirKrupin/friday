@@ -1,0 +1,29 @@
+.Header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.Header-link-container {
+  display: flex;
+}
+
+.Header-logo {
+  font-size: 20px;
+  color: rgb(46, 197, 255);
+}
+
+.Header-link {
+  margin-right: 20px;
+  color: rgba(0,0,0,.6);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Header-link:hover {
+  text-decoration: underline;
+}
