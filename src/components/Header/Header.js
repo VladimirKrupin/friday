@@ -24,7 +24,7 @@ class Header extends Component {
     console.log('munu', this.props);
     return (
       <div className="Header">
-        <div className="Header-container">
+        <div className="Header-container wrapper">
           <div className="Header-logo">Friday</div>
           <div className="Header-link-container">
             {this.props.menu.map((item, index) =>

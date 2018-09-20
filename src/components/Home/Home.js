@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Header from '../Header/Header';
+import Form from '../Form/Form';
 
 const menu = [
   {
@@ -23,7 +24,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header menu={menu} title={title}/>
+        <Header menu={menu} title={title} submit={function () {}}/>
+        <Form />
       </div>
     );
   }

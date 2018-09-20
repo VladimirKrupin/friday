@@ -1,11 +1,6 @@
 .Header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
   border-bottom: 1px solid rgba(0,0,0,.1);
-  margin-bottom: 40px;
-  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .Header-link-container {
@@ -26,4 +21,8 @@
 
 .Header-link:hover {
   text-decoration: underline;
+}
+
+.Header-link:last-child {
+  margin-right: 0;
 }

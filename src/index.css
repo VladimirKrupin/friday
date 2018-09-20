@@ -3,3 +3,30 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+* {
+  color: rgba(0,0,0,.6);
+  outline: none;
+}
+
+.wrapper {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 20px;
+}
+
+.wrapper-left {
+  justify-content: flex-start;
+}
+
+.wrapper-wrap {
+  flex-wrap: wrap;
+}
+
+.text-header {
+  width: 100%;
+  font-size: 20px;
+}
