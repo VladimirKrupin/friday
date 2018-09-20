@@ -2,23 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
 
+import { Link } from "react-router-dom";
+
 class Header extends Component {
   static propTypes = {
-    menu: PropTypes.array.isRequired,
-    isLoading: PropTypes.bool,
-    submit: PropTypes.func.isRequired,
-    title: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['news','photos']),
-    user: PropTypes.shape({
-      name: PropTypes.string,
-      age: PropTypes.number
-    }),
-    users: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        age: PropTypes.number
-      }),
-    )
+    menu: PropTypes.array.isRequired
   };
   render() {
     return (
@@ -27,7 +15,7 @@ class Header extends Component {
           <div className="Header-logo">Friday</div>
           <div className="Header-link-container">
             {this.props.menu.map((item, index) =>
-              <a key={index} href="{item.link}" className="Header-link">{item.lable}</a>
+              <Link key={index} className="Header-link" to={item.link}>{item.lable}</Link>
             )}
           </div>
         </div>
