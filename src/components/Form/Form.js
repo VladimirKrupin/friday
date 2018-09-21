@@ -8,6 +8,11 @@ class Form extends Component {
     super(props);
     this.state = {
       email: '',
+      messages: [{
+        name: '',
+        date: '',
+        message: ''
+      }]
     };
   }
   handleSubmit(event) {
@@ -29,6 +34,8 @@ class Form extends Component {
             onChange={this.handleEmailChange.bind(this)}
           />
           <Button btnClass="Button" />
+          <div>
+          </div>
         </form>
       </div>
     );
