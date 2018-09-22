@@ -1,5 +1,5 @@
-function Menu() {
-  return [{
+const initialState = [
+  {
     link: "/",
     lable: "home"
   },
@@ -10,7 +10,9 @@ function Menu() {
   {
     link: "/dropdown",
     lable: "Dropdown"
-  }];
-}
+  }
+];
 
-export default Menu;
+export default function menu(state = initialState) {
+  return state;
+}

@@ -8,8 +8,9 @@
 }
 
 .Header-logo {
-  font-size: 20px;
-  color: rgb(46, 197, 255);
+font-size: 20px;
+color: rgb(46, 197, 255);
+text-decoration: none;
 }
 
 .Header-link {
@@ -25,4 +26,26 @@
 
 .Header-link:last-child {
   margin-right: 0;
+}
+
+.Header-search {
+  padding: 5px 10px;
+}
+
+.Header-search-container {
+  position: relative;
+}
+
+.Header-search-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0 20px 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-top: 0;
+  background: #fff;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+  font-size: 13px;
 }
