@@ -1,13 +1,17 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
 import tracks from './tracks'
-import playlists from './playlists'
+import newTracks from './newTracks'
 import menu from './menu'
 import searchFilter from './searchFilter'
+import trackName from './trackName'
 
 export default combineReducers({
+  routing: routerReducer,
   tracks,
-  playlists,
+  trackName,
+  newTracks,
   menu,
   searchFilter
 });

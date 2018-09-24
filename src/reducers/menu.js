@@ -4,12 +4,12 @@ const initialState = [
     lable: "home"
   },
   {
-    link: "/app",
-    lable: "App"
+    link: "/tracks",
+    lable: "Tracks"
   },
   {
-    link: "/dropdown",
-    lable: "Dropdown"
+    link: "/addtracks",
+    lable: "Add-Tracks"
   }
 ];
 

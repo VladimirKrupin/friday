@@ -1,9 +1,9 @@
-.Form {
+.Add-Track-Form {
     display: block;
     width: 300px;
 }
 
-.Form-input {
+.Add-Track-Form-input {
     width: 100%;
     margin-bottom: 20px;
     padding: 10px 15px;

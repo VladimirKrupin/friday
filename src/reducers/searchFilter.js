@@ -1,6 +1,6 @@
-const initialState = '';
+const initialState = "";
 
-export default function searchFilter(state = initialState, action) {
+export default function searchFilter(state = initialState, action = "FIND_TRACK") {
   if (action.type === 'FIND_TRACK') {
     return action.payload;
   }
