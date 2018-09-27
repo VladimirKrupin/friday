@@ -1,0 +1,27 @@
+#local project
+version: '2'
+services:
+  docker_web:
+    build:
+      context: ./
+      dockerfile: web_dockerfile
+    volumes:
+    - ./build:/var/www/friday
+    ports:
+    - "3041:80"
+  docker_nodejs:
+    build:
+      context: ./
+      dockerfile: node_dockerfile
+    volumes:
+    - ./api:/usr/src/app
+    ports:
+    - "3042:8080"
+    links:
+    - docker_mongo
+  docker_mongo:
+    image: mongo
+    volumes:
+    - ./autorun/dump:/dump
+    ports:
+    - "27017:27017"
