@@ -2,16 +2,22 @@ import React from 'react';
 import './Home.css';
 import Header from "../Header/Header";
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import Button from "../Button/Button";
+import axios from 'axios';
 
-const Home = ({ handleSubmit, handleEmailChange }) => {
+const Home = ({ getAnswer, onChangeQuestion, question }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTrack(trackName);
+    getAnswer(question);
+    axios.get('http://api-friday/artists').then(response => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
-  const handleEmailChange = (event) => {
-    addTrackName(event.target.value);
+  const changeQuestion = (event) => {
+    onChangeQuestion(event.target.value);
   };
   return (
     <div>
@@ -23,15 +29,10 @@ const Home = ({ handleSubmit, handleEmailChange }) => {
             className="Add-Track-Form-input"
             type="text"
             placeholder="Friday or not?"
-            value={trackName}
+            value={question}
             onChange={changeQuestion}
           />
           <Button btnClass="Button" />
-          <ul className="list">
-            {tracksNew.map((track, index) =>
-              <li key={index}><div>track <Link to={"tracks/"+track.id} >{track.name}</Link> was be added</div></li>
-            )}
-          </ul>
         </form>
       </div>
     </div>
@@ -40,11 +41,14 @@ const Home = ({ handleSubmit, handleEmailChange }) => {
 
 export default connect(
   (state) => ({
-    question: state.trackName
+    question: state.question
   }),
   dispatch => ({
-    addTrackName: (name) => {
-      dispatch({ type: 'CHANGE_QUESTION', payload: name});
-    }
+    getAnswer: (question) => {
+      dispatch({ type: 'GET_ANSWER', payload: question});
+    },
+    onChangeQuestion:(question) => {
+      dispatch({ type: 'CHANGE_QUESTION', payload: question});
+    },
   })
 )(Home);

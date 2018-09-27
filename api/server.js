@@ -7,6 +7,11 @@ var fridayController = require('./controllers/friday');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// Add headers
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.get("/", function (req,res) {
   res.send("Home");

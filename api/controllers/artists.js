@@ -7,8 +7,8 @@ exports.all = function (req, res) {
       res.sendStatus(500);
     }
     res.send(docs);
-  })
-};
+  }
+)};
 
 exports.findById = function (req, res) {
   Artists.findById(req.params.id, function (err, docs) {
