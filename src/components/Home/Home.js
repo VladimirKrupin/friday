@@ -3,21 +3,17 @@ import './Home.css';
 import Header from "../Header/Header";
 import { connect } from 'react-redux';
 import Button from "../Button/Button";
-import axios from 'axios';
+import axios from "axios";
+import clear from "clear-code";
 
-const Home = ({ getAnswer, onChangeQuestion, question }) => {
+
+const Home = ({ getAnswer, onChangeQuestion, question, answer }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     getAnswer(question);
-    axios.get('http://api-friday/artists').then(response => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   };
   const changeQuestion = (event) => {
-    onChangeQuestion(event.target.value);
+    onChangeQuestion(clear(event.target.value));
   };
   return (
     <div>
@@ -33,6 +29,7 @@ const Home = ({ getAnswer, onChangeQuestion, question }) => {
             onChange={changeQuestion}
           />
           <Button btnClass="Button" />
+          <div>{answer}</div>
         </form>
       </div>
     </div>
@@ -41,11 +38,27 @@ const Home = ({ getAnswer, onChangeQuestion, question }) => {
 
 export default connect(
   (state) => ({
-    question: state.question
+    question: state.question,
+    answer: state.answer
   }),
   dispatch => ({
     getAnswer: (question) => {
-      dispatch({ type: 'GET_ANSWER', payload: question});
+      let data = {
+        question: question
+      };
+      const options = {
+        method: 'POST',
+        data: data,
+        url: 'http://api-friday/getfriday/',
+      };
+      axios(options)
+        .then(response => {
+          console.log(response);
+          dispatch({ type: 'SET_ANSWER', payload: response.data});
+        })
+        .catch(e => {
+          console.log(e);
+        });
     },
     onChangeQuestion:(question) => {
       dispatch({ type: 'CHANGE_QUESTION', payload: question});

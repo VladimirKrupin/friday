@@ -7,6 +7,7 @@ import menu from './menu'
 import searchFilter from './searchFilter'
 import trackName from './trackName'
 import question from './question'
+import answer from './answer'
 
 export default combineReducers({
   routing: routerReducer,
@@ -16,4 +17,5 @@ export default combineReducers({
   menu,
   searchFilter,
   question,
+  answer
 });

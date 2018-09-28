@@ -1,4 +1,9 @@
 exports.getFriday = function (req, res) {
-  var question = req.body.question;
-  res.send("server answer - " + question);
+  var question = toString(req.body.question);
+  console.log(req.body);
+
+  if (('abcdefgh'.search('def') != -1)) {
+
+  }
+  res.send(question);
 };
