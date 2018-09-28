@@ -13,7 +13,7 @@ const Home = ({ getAnswer, onChangeQuestion, question, answer }) => {
     getAnswer(question);
   };
   const changeQuestion = (event) => {
-    onChangeQuestion(clear(event.target.value));
+    onChangeQuestion(clear(event.target.value, 255));
   };
   return (
     <div>
@@ -54,7 +54,7 @@ export default connect(
       axios(options)
         .then(response => {
           console.log(response);
-          dispatch({ type: 'SET_ANSWER', payload: response.data});
+          dispatch({ type: 'SET_ANSWER', payload: response.data.date});
         })
         .catch(e => {
           console.log(e);
