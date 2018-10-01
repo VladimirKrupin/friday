@@ -8,6 +8,9 @@ Append this line to /etc/hosts:
 
 Start docker with command:
 
+    npm i
+    cd api/
+    npm i
     docker-compose up -d
     
 Config for your server nginx ( nginx at proxy server, transfer requests on localhost:3032 where listening docker ):
