@@ -3,3 +3,6 @@ FROM nginx
 ADD ./autorun/conf/vhost.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /var/www/friday
+
+
+RUN npm install

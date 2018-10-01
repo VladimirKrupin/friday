@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import { connect } from 'react-redux';
 import Button from "../Button/Button";
 import axios from "axios";
-import clear from "clear-code";
+// import clear from "clear-code";
 
 
 const Home = ({ getAnswer, onChangeQuestion, question, answer }) => {
@@ -13,7 +13,7 @@ const Home = ({ getAnswer, onChangeQuestion, question, answer }) => {
     getAnswer(question);
   };
   const changeQuestion = (event) => {
-    onChangeQuestion(clear(event.target.value, 255));
+    onChangeQuestion(event.target.value, 255);
   };
   return (
     <div>

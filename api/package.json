@@ -18,7 +18,6 @@
   "homepage": "https://github.com/VladimirKrupin/nodeJsApi#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "clear-code": "^1.0.4",
     "express": "^4.16.3",
     "mongodb": "^3.1.6"
   }
