@@ -3,8 +3,7 @@ _start project for local assembly_
 
 Append this line to /etc/hosts:
 
-    127.0.1.1 friday
-    127.0.1.1 api-friday
+    127.0.1.1 friday api-friday
 
 Start docker with command:
 
