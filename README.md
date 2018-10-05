@@ -3,8 +3,7 @@ _start project for local assembly_
 
 Append this line to /etc/hosts:
 
-    127.0.1.1 friday
-    127.0.1.1 api-friday
+    127.0.1.1 friday api-friday
 
 Start docker with command:
 
@@ -15,8 +14,9 @@ Start docker with command:
     
 Config for your server nginx ( nginx at proxy server, transfer requests on localhost:3032 where listening docker ):
     
-    autorun/conf/friday.conf
-    autorun/conf/api-friday.conf
+    sudo cp /var/www/friday/autorun/conf/friday.conf /etc/nginx/sites-available/
+    sudo -s ln /etc/nginx/sites-available/friday.conf /etc/nginx/sites-enabled/
+    sudo service nginx restart
     
 Paste this address into your browser and see:
 

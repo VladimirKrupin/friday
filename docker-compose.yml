@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: web_dockerfile
     volumes:
-    - ./build:/var/www/friday
+    - ./frontend/build:/var/www/friday
     ports:
     - "3041:80"
   docker_nodejs:
@@ -14,14 +14,18 @@ services:
       context: ./
       dockerfile: node_dockerfile
     volumes:
-    - ./api:/usr/src/app
+    - ./backend:/usr/src/app
+    - ./frontend:/usr/src/frontend
+    - ./autorun/scripts:/usr/src/scripts
     ports:
     - "3042:8080"
     links:
     - docker_mongo
   docker_mongo:
-    image: mongo
+    build:
+      context: ./
+      dockerfile: mongo_dockerfile
     volumes:
     - ./autorun/dump:/dump
     ports:
-    - "27017:27017"
+    - "3043:27017"
