@@ -8,7 +8,7 @@ LINE="${GREEN}-------------------------------------${NC}";
 RED='\033[0;31m';
 
 printf "${LINE}\n\n\n"
-printf "${GREEN}       HARD RESTART FRIDAY PROJECT${NC}\n\n\n"
+printf "${GREEN}       HARD RESTART FRIDAY PROJECT LOCAL${NC}\n\n\n"
 printf "${LINE}\n\n"
 printf "${GREEN}   made by Vladimir Krupin \033[1mvladimir.krupin133@mail.ru\033[m\n\n${NC}"
 printf "${LINE}\n\n"
@@ -25,6 +25,8 @@ case "$response" in
         printf "${GREEN}DONE${NC} ${PURPLE}sudo docker rmi friday_docker_web${NC}${N}"
         sudo docker rmi friday_docker_mongo
         printf "${GREEN}DONE${NC} ${PURPLE}sudo docker rmi friday_docker_mongo${NC}${N}"
+        sudo rm -rf frontend/build frontend/node_modules/ backend/node_modules/
+        printf "${GREEN}DONE${NC} ${PURPLE}sudo rm -rf frontend/build frontend/node_modules/ backend/node_modules/${N}"
         ;;
     *)
         #do_something_else

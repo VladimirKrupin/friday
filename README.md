@@ -1,4 +1,4 @@
-### Docker project with nginx, php-fpm, mysql and phpmyadmin
+### Friday docker project with nodejs react mongodb
 _start project for local assembly_
 
 Append this line to /etc/hosts:
@@ -7,10 +7,31 @@ Append this line to /etc/hosts:
 
 Start docker with command:
 
-    npm i
-    cd api/
-    npm i
-    docker-compose up -d
+    sh start-local.sh
+    
+Hard reload project:
+
+    sh hard-restart-local.sh
+    
+AFTER UP PROJECT:
+
+    build react
+    sudo docker exec -it friday_docker_nodejs_1 sh react-build.sh
+    
+    instal react requireds
+    sudo docker exec -it friday_docker_nodejs_1 sh react-start.sh
+    
+    reload api
+    docker restart friday_docker_nodejs_1
+    
+MAKE BACKUP PROJECT
+
+    sh mongo-dump.sh
+    
+RESTORE MONGO DUMP
+
+    put your dump in backup folder and use
+    sh mongo-restore-dump.sh
     
 Config for your server nginx ( nginx at proxy server, transfer requests on localhost:3032 where listening docker ):
     
@@ -48,4 +69,4 @@ ______________________________________________________________
 
 *Remove all images*
 
-    sudo docker rmi $(sudo docker images -q)
+    sudo docker rmi $(sudo docker images -a)

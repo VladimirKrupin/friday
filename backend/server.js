@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", function (req,res) {
-  res.send("Home");
+  res.send("New home");
 });
 
 app.get("/artists/", artistsController.all);

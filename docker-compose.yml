@@ -16,7 +16,7 @@ services:
     volumes:
     - ./backend:/usr/src/backend
     - ./frontend:/usr/src/frontend
-    - ./autorun/scripts:/usr/src/scripts
+    - ./autorun/scripts/node:/usr/src/scripts
     ports:
     - "3042:8080"
     links:
@@ -27,5 +27,6 @@ services:
       dockerfile: mongo_dockerfile
     volumes:
     - ./autorun/dump:/dump
+    - ./backup:/backup
     ports:
     - "3043:27017"
