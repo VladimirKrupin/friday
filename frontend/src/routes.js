@@ -1,6 +1,6 @@
 import _Home from './components/Home/Home';
 import _AddTrack from './components/AddTrack/AddTrack';
-import _reducer from './reducers';
+import _reducer from './reducers/index';
 import _Tracks from './components/Tracks/Tracks';
 import _Track from './components/Tracks/Track';
 export { _Tracks as Tracks };

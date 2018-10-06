@@ -1,13 +1,5 @@
 FROM node:8
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/scripts
 
-COPY ./api/package*.json ./
-
-RUN npm install
-
-COPY ./api .
-
-EXPOSE 8080
-
-CMD [ "npm", "start" ]
+CMD [ "sh", "nodejs-start.sh" ]

@@ -14,7 +14,7 @@ services:
       context: ./
       dockerfile: node_dockerfile
     volumes:
-    - ./backend:/usr/src/app
+    - ./backend:/usr/src/backend
     - ./frontend:/usr/src/frontend
     - ./autorun/scripts:/usr/src/scripts
     ports:
